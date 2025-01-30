@@ -1,0 +1,169 @@
+/* Reset basic margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.profile-card {
+    background-color: rgb(3, 3, 65);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+    width: 300px;
+    text-align: center;
+    flex: 1;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.job-title {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.location {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.time {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #777;
+}
+
+/* Sidebar with contact details */
+.contact-sidebar {
+    background-color:rgb(3,3,65) ;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+    width: 300px;
+    display: none; /* Initially hidden */
+    transition: all 0.3s ease-in-out;
+    flex: 1;
+}
+
+.contact-sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: white;
+}
+
+.contact-sidebar p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.contact-sidebar a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#exitButton {
+    margin-top: 20px;
+    background-color: #dc3545;
+}
+
+#exitButton:hover {
+    background-color: #c82333;
+}
+
+/* For larger screens (min-width 768px), position sidebar to the right */
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row; /* Align the profile card and sidebar horizontally */
+    }
+
+    .profile-card {
+        width: 300px;
+    }
+
+    .contact-sidebar {
+        display: block; /* Show the sidebar */
+        margin-top: 0;
+    }
+}
+
+/* For smaller screens (less than 768px), stack the sidebar below */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack profile card and sidebar vertically */
+        align-items: center;
+    }
+
+    .profile-card {
+        width: 90%; /* Make the profile card take up more width on smaller screens */
+    }
+
+    .contact-sidebar {
+        width: 90%; /* Sidebar takes up more width on smaller screens */
+        display: none;
+        margin-top: 20px;
+    }
+}
